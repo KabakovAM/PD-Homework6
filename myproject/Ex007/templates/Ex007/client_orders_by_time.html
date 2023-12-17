@@ -1,0 +1,17 @@
+{% extends 'Ex007/index.html' %}
+
+{% block title %}Клиент{% endblock %}
+
+{% block content %}
+    <h1>{{ client }}</h1>
+    <ul>
+    {% for order, QuerySet_list in goods.items %}
+        <h1>{{ order }}</h1>
+            {% for goods_list in QuerySet_list %}
+                {% for good in goods_list %}
+                    <li>{{ good }}</li>
+                {% endfor %}
+            {% endfor %}
+    {% endfor %}
+    </ul>
+{% endblock %}  
